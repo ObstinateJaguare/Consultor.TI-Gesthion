@@ -12,5 +12,9 @@ use App\Http\Controllers\CuentaController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//cuentas
 Route::get('/',[CuentaController::class, 'index']);
-Route::any('/cuentas/store',[CuentaController::class, 'store']);
+Route::post('/cuentas/create',[CuentaController::class, 'store']);
+Route::get('/cuentas/list',[CuentaController::class, 'showAll']);
+Route::get('/cuentas/get-cuentas/{id}',[CuentaController::class, 'show']);
+Route::update('/cuentas/update',[CuentaController::class, 'update']);

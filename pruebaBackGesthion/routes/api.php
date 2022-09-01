@@ -17,4 +17,7 @@ use App\Http\Controllers\CuentaController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/cuentas/crear',[CuentaController::class, 'store']);
+Route::post('/cuentas/create',[CuentaController::class, 'store']);
+Route::get('/cuentas/list',[CuentaController::class, 'showAll']);
+Route::get('/cuentas/get-cuentas/{id}',[CuentaController::class, 'show']);
+Route::update('/cuentas/update',[CuentaController::class, 'update']);

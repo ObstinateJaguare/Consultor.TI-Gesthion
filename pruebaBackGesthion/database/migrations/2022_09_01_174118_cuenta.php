@@ -14,7 +14,7 @@ class Cuenta extends Migration
     public function up()
     {
         Schema::create('tbl_cuentas', function (Blueprint $table) {
-            $table->increments('(idCuenta');
+            $table->increments('idCuenta');
             $table->string('nombre');
             $table->string('correo')->unique();
             $table->string('telefono');
