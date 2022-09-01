@@ -67,7 +67,7 @@ class ProductosController extends Controller
     public function update(Request $request, ProductosModel $productosModel)
     {
         try {
-            $productosModel::where("estado", "1")->first();
+            $productosModel::find('idProducto',$request->id);
 
             $productosModel->nombre = $request->nombre;
             $productosModel->cantida = $request->cantida;

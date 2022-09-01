@@ -69,7 +69,7 @@ class CuentaController extends Controller
     public function update(Request $request, CuentaModel $cuentaModel)
     {
         try {
-            $cuentaModel::where("estado", "1")->first();
+            $cuentaModel::find('idCuenta',$request->id);
 
             $cuentaModel->nombre = $request->nombre;
             $cuentaModel->correo = $request->correo;
